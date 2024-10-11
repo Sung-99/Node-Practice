@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "ExecutingTs.js",
   "scripts": {
-    "start": "node ./dist/ExecutingTs.js",
-    "build": "tsc"
+    "startTs": "node --import=tsx --watch ./src/tsFilesRunner/ExecutingTs.ts",
+    "startJs": "node --watch src/jsFilesRunner/ExecutingJs.js"
+    
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "ts-node": "^10.9.2"
+    "tsx": "^4.19.1"
+  },
+  "dependencies": {
+    "typescript": "^5.6.3"
   }
 }
