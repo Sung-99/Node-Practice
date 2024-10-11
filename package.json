@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "ExecutingTs.js",
   "scripts": {
-    "startTs": "node --import=tsx --watch ./src/tsFilesRunner/ExecutingTs.ts",
+    "startTs": "node --env-file=.env --import=tsx --watch ./src/tsFilesRunner/ExecutingTs.ts",
     "startJs": "node --watch src/jsFilesRunner/ExecutingJs.js"
-    
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/node": "^22.7.5",
     "tsx": "^4.19.1"
   },
   "dependencies": {
