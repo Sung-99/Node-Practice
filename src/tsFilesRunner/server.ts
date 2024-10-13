@@ -1,13 +1,27 @@
-import { createServer } from 'node:http'
+import express from 'express'
+import helmet from 'helmet';
+import path from 'path';
 
-const server = createServer((req,res)=>{
 
-res.end("ola mundo");
+const app = express();
+
+app.use(helmet());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, '../../public')));
+
+
+app.get('/',(req, res) => {
+    let name = "vitor";
+    let age = 25;
+
+    res.json({name, age});
 
 });
 
 
-server.listen(3000, ()=>{
+app.listen(3000, () =>{
 
-  console.log(" server working on http://localhost:3000");  
+    console.log("Server working on http://localhost:3000/")
+
 });
