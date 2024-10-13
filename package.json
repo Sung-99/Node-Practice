@@ -1,10 +1,9 @@
 {
   "name": "nodeserver",
   "version": "1.0.0",
-  "main": "ExecutingTs.js",
+  "main": "server.ts",
   "scripts": {
-    "startTs": "node --env-file=.env --import=tsx --watch ./src/tsFilesRunner/ExecutingTs.ts",
-    "startJs": "node --watch src/jsFilesRunner/ExecutingJs.js"
+    "start": "node --env-file=.env --import=tsx --watch ./src/tsFilesRunner/server.ts"
   },
   "author": "",
   "license": "ISC",
