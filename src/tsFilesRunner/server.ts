@@ -1,6 +1,7 @@
 import express from 'express'
 import helmet from 'helmet';
 import path from 'path';
+import router from '../routes';
 
 
 const app = express();
@@ -10,15 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../../public')));
 
-
-app.get('/',(req, res) => {
-    let name = "vitor";
-    let age = 25;
-
-    res.json({name, age});
-
-});
-
+app.use('/', router); // main router more outer one
 
 app.listen(3000, () =>{
 
