@@ -21,11 +21,11 @@ router.get('/ping', (req, res) => {
 
 
 router.get('/',(req, res) => {
-    let name = "vitor";
-    let age = 25;
 
-    res.json({name, age});
+    res.json({ raw: [] });
 
 });
+
+
 
 export default router
