@@ -1,5 +1,4 @@
-import { readFile } from "fs/promises";
-import { writeFile } from "fs/promises";
+import { readFile, unlink, writeFile  } from "fs/promises";
 
 const writing = async () => {
 
@@ -42,4 +41,12 @@ const updateFile = async () => {
     //console.log(list);
 }
 
-updateFile();
+//updateFile();
+
+const deleteFile = async () => {
+   await unlink('./teste.txt'); 	
+  
+    //console.log(list);
+}
+
+//deleteFile();

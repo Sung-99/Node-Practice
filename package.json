@@ -4,8 +4,9 @@
   "main": "server.ts",
   "scripts": {
     "start": "node --env-file=.env --import=tsx --watch ./src/tsFilesRunner/server.ts",
-    "file": "node --import=tsx --watch ./src/file.ts"
-  },
+    "file": "node --import=tsx --watch ./src/file.ts",
+    "test": "node test2" 
+ },
   "author": "",
   "license": "ISC",
   "description": "",
