@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node --env-file=.env --import=tsx --watch ./src/tsFilesRunner/server.ts",
     "file": "node --import=tsx --watch ./src/file.ts",
-    "test": "node test2" 
+    "socketS": "node --import=tsx --watch ./src/sockServer.ts", 
+    "socketC": "node --import=tsx --watch ./src/sockClient.ts" 
  },
   "author": "",
   "license": "ISC",
