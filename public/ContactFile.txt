@@ -1,0 +1,12 @@
+API CONTACT LIST
+
+-CREATE
+-LIST
+-DELETE
+
+
+URLS MANAGEMENT
+
+-POST
+-GET
+-DELETE Query/via(contact?name=joao)
