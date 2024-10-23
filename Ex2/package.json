@@ -1,0 +1,21 @@
+{
+  "name": "ex2",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "node --import tsx --watch ./src/server.ts"
+  },
+  "author": "Vitor",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.9",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
