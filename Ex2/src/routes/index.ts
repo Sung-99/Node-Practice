@@ -4,7 +4,7 @@ import  { readFile, writeFile  } from 'fs/promises';
 const dataSource = './data/list.txt'
 const router = express.Router();
 
-
+//write
 router.post('/contato', async (req, res) => {
     const { name } = req.body;
     
@@ -24,6 +24,19 @@ router.post('/contato', async (req, res) => {
     await writeFile(dataSource, list.join('\n'))
 
     res.status(201).json({contato: name});
+});
+
+
+//read
+router.get('/contatos', async(req, res) =>{
+    let list: string[] = [];
+
+    try{
+        const data = await readFile(dataSource, {encoding: 'utf8'});
+        list = data.split('\n');
+    }catch (err){}
+
+    res.json({contatos: list});
 });
 
 export default router;
