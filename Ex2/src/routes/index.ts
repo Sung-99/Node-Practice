@@ -1,5 +1,6 @@
 import express from 'express';
-import  { readFile, writeFile  } from 'fs/promises';
+import  { writeFile  } from 'fs/promises';
+import { createContact, getContacts } from '../services/contact';
 
 const dataSource = './data/list.txt'
 const router = express.Router();
@@ -15,26 +16,14 @@ router.post('/contato', async (req, res) => {
     
     //data process
 
-    let list: string[] = [];
-    try{
-        const data = await readFile(dataSource, {encoding: 'utf8'});
-        list = data.split('\n');
-    }catch (err){}
-    list.push(name);
-    await writeFile(dataSource, list.join('\n'))
-
+    await createContact(name);
     res.status(201).json({contato: name});
 });
 
 
 //read
 router.get('/contatos', async(req, res) =>{
-    let list: string[] = [];
-
-    try{
-        const data = await readFile(dataSource, {encoding: 'utf8'});
-        list = data.split('\n');
-    }catch (err){}
+    let list =  await getContacts();
 
     res.json({contatos: list});
 });
@@ -44,12 +33,7 @@ router.delete('/contatos', async (req, res) => {
     if(!name){
        res.json({error: "No name inserted"});
     }
-    let list: string[] = [];
-    try{
-
-        const data = await readFile(dataSource, {encoding: 'utf8'});
-        list = data.split('\n');
-    }catch(err){}
+    let list =  await getContacts();
     list = list.filter(item => item.toLowerCase() !== (name as string).toLowerCase());
     
     await writeFile(dataSource, list.join('\n'));
