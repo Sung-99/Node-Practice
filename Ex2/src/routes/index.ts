@@ -1,6 +1,7 @@
 import express from 'express';
 import  { writeFile  } from 'fs/promises';
-import { createContact, getContacts } from '../services/contact';
+import { createContact, deleteContact, getContacts } from '../services/contact';
+
 
 const dataSource = './data/list.txt'
 const router = express.Router();
@@ -33,10 +34,7 @@ router.delete('/contatos', async (req, res) => {
     if(!name){
        res.json({error: "No name inserted"});
     }
-    let list =  await getContacts();
-    list = list.filter(item => item.toLowerCase() !== (name as string).toLowerCase());
-    
-    await writeFile(dataSource, list.join('\n'));
+    await deleteContact(name as string);
     res.json({contato: name});
 });
 

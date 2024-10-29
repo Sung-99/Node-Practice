@@ -21,3 +21,10 @@ export const createContact = async (name: string) => {
     list.push(name);
     await writeFile(dataSource, list.join('\n'))
 }
+
+export const deleteContact = async (name: string) => {
+    let list =  await getContacts();
+    list = list.filter(item => item.toLowerCase() !== name.toLowerCase());
+    
+    await writeFile(dataSource, list.join('\n'));
+}
