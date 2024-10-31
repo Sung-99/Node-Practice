@@ -1,5 +1,4 @@
 import express from 'express';
-import  { writeFile  } from 'fs/promises';
 import { createContact, deleteContact, getContacts } from '../services/contact';
 
 
@@ -14,15 +13,12 @@ router.post('/contato', async (req, res) => {
          res.json({error: 'name need at least 2 character'});
          return;
     }
-    
-    //data process
 
     await createContact(name);
     res.status(201).json({contato: name});
 });
 
 
-//read
 router.get('/contatos', async(req, res) =>{
     let list =  await getContacts();
 
