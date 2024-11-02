@@ -1,0 +1,19 @@
+{
+  "name": "ex3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "zod": "node --import=tsx --watch ./src/zod.ts" 
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.8.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}
