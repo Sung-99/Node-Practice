@@ -13,3 +13,13 @@ let data = {
     email : "Vitor@hotmail.com",
     age: 25
 }
+
+const result = schema.safeParse(data);
+if(result.success){
+    console.log('Deu certo, continue...');
+    console.log(result.data);
+
+}else {
+
+    console.log('Deu erro')
+}
