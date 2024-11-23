@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "zod": "node --import=tsx --watch ./src/zod.ts" 
+    "zod": "node --import=tsx --watch ./src/zod.ts"
+  
   },
   "author": "",
   "license": "ISC",
